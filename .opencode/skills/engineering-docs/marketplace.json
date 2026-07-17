@@ -1,0 +1,21 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "engineering-docs",
+  "description": "13 world-class engineering documentation skills covering the complete software lifecycle.",
+  "owner": {
+    "name": "Fattain Naime",
+    "email": "iamnaime@builderhall.com"
+  },
+  "plugins": [
+    {
+      "name": "engineering-docs",
+      "description": "13 world-class engineering documentation skills.",
+      "version": "1.0.6",
+      "source": "./",
+      "author": {
+        "name": "Fattain Naime",
+        "email": "iamnaime@builderhall.com"
+      }
+    }
+  ]
+}

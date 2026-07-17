@@ -1,0 +1,156 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// 项目 - 每次上传PRD生成文档为一个项目
+model Project {
+  id              String   @id @default(uuid())
+  name            String
+  status          String   @default("PENDING") // PENDING | GENERATING | PENDING_REVIEW | DEVELOPING | VALIDATING | REWORKING | HUMAN_REVIEW | APPROVED | REJECTED | FAILED
+  version         Int      @default(1)
+  iterationCount  Int      @default(0)  // 当前迭代轮次
+  basePath        String                           // 文档存储根路径
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  tasks           Task[]
+  approvals       Approval[]
+  documents       Document[]
+  codeGens        CodeGen[]
+  validations     Validation[]
+  reworkRecords   ReworkRecord[]
+  stateSnapshots  StateSnapshot[]
+
+  @@map("projects")
+}
+
+// 生成任务 - 每次文档生成记录
+model Task {
+  id          String   @id @default(uuid())
+  projectId   String
+  status      String   @default("PENDING") // PENDING | RUNNING | COMPLETED | FAILED
+  prdContent  String                       // PRD 原文
+  prdFilePath String?                      // PRD 上传文件路径（可选）
+  startTime   DateTime?
+  endTime     DateTime?
+  errorMsg    String?
+  retryCount  Int      @default(0)
+  thinking    String?                      // 流式生成步骤（JSON 数组）
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  project     Project    @relation(fields: [projectId], references: [id])
+  documents   Document[]
+
+  @@map("tasks")
+}
+
+// 文档 - 单份架构设计文档的元数据
+model Document {
+  id        String   @id @default(uuid())
+  taskId    String
+  projectId String
+  docType   String                            // TECH_STACK | MODULE_DESIGN | API_CONTRACT | DATA_MODEL
+  fileName  String                            // 实际文件名
+  filePath  String                            // 文件系统路径
+  version   Int      @default(1)
+  fileSize  Int      @default(0)
+  createdAt DateTime @default(now())
+
+  task       Task    @relation(fields: [taskId], references: [id])
+  project    Project @relation(fields: [projectId], references: [id])
+
+  @@unique([taskId, docType])
+  @@map("documents")
+}
+
+// 审批记录
+model Approval {
+  id          String   @id @default(uuid())
+  projectId   String
+  reviewer    String   @default("架构师")
+  action      String                            // APPROVED | REJECTED
+  comment     String?                       // 审批意见（驳回时必填）
+  createdAt   DateTime @default(now())
+
+  project     Project  @relation(fields: [projectId], references: [id])
+
+  @@map("approvals")
+}
+
+// 代码生成记录（Worker Agents）
+model CodeGen {
+  id          String   @id @default(uuid())
+  projectId   String
+  role        String                            // FRONTEND | BACKEND
+  status      String   @default("PENDING") // PENDING | RUNNING | COMPLETED | FAILED | REWORKING
+  codeContent String?                      // 生成的代码（整体打包）
+  filePath    String?                       // 生成的文件路径
+  tree        String?                       // 文件树 JSON
+  errorMsg    String?
+  startTime   DateTime?
+  endTime     DateTime?
+  iteration   Int      @default(1)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  project     Project  @relation(fields: [projectId], references: [id])
+
+  @@unique([projectId, role, iteration])
+  @@map("code_gens")
+}
+
+// 验证结果（Validator Agents）
+model Validation {
+  id          String   @id @default(uuid())
+  projectId   String
+  role        String                            // FUNCTIONAL | SECURITY | PERFORMANCE | UI
+  codeGenId   String?
+  status      String   @default("PENDING") // PENDING | RUNNING | PASSED | FAILED | ERROR
+  result      String?                      // 验证结果详情（JSON）
+  score       Int?                          // 评分 0-100
+  comments    String?                      // 验证意见/反馈
+  iteration   Int      @default(1)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  project     Project  @relation(fields: [projectId], references: [id])
+
+  @@map("validations")
+}
+
+// 返修记录（Rework 闭环）
+model ReworkRecord {
+  id          String   @id @default(uuid())
+  projectId   String
+  iteration   Int      @default(1)
+  trigger     String                            // VALIDATOR | HUMAN_REVIEW
+  feedback    String                            // 可操作的反馈内容
+  source      String                            // 来源（Validator role 或 HUMAN）
+  createdAt   DateTime @default(now())
+
+  project     Project  @relation(fields: [projectId], references: [id])
+
+  @@map("rework_records")
+}
+
+// 状态快照 — 每次状态转换前持久化完整项目状态，支持崩溃恢复
+model StateSnapshot {
+  id          String   @id @default(uuid())
+  projectId   String
+  version     Int                               // 快照时的文档版本号
+  iteration   Int      @default(0)              // 快照时的迭代轮次
+  status      String                            // 快照时的项目状态
+  snapshot    String                            // 完整状态 JSON（文档/代码/验证/返修记录元数据）
+  createdAt   DateTime @default(now())
+
+  project     Project  @relation(fields: [projectId], references: [id])
+
+  @@index([projectId, createdAt])
+  @@map("state_snapshots")
+}

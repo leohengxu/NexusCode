@@ -1,0 +1,902 @@
+[2m09:23:09[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mWarning: [antd: Card] `bodyStyle` is deprecated. Please use `styles.body` instead.
+[2m09:26:04[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/preview-review/a384c40e-fede-4df3-8b87-5f86e0ab61d0/preview[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:26:04[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:26:04[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx:163:33
+[2m09:26:04[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:27:24[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:27:24[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:27:24[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx:163:33
+[2m09:30:09[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mWarning: [antd: Card] `bodyStyle` is deprecated. Please use `styles.body` instead.
+[2m09:30:55[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mWarning: [antd: Card] `bodyStyle` is deprecated. Please use `styles.body` instead.
+[2m09:31:13[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mWarning: [antd: Card] `bodyStyle` is deprecated. Please use `styles.body` instead.
+[2m09:37:39[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mWarning: [antd: Card] `bodyStyle` is deprecated. Please use `styles.body` instead.
+[2m09:43:54[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:43:54[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:43:54[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166234191:163:33
+[2m09:45:03[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mWarning: [antd: Card] `bodyStyle` is deprecated. Please use `styles.body` instead.
+[2m09:56:45[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mWarning: [antd: Card] `bodyStyle` is deprecated. Please use `styles.body` instead.
+[2m09:59:09[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:59:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:59:43[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m09:59:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:59:48[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:59:48[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:59:48[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m09:59:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:59:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:59:53[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m09:59:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:59:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m09:59:58[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:00:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:03[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:00:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:08[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:00:13[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:13[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:13[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:00:18[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:18[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:18[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:00:23[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:23[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:23[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:00:28[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:28[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:28[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:00:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:33[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:00:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:38[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:00:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:43[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:00:48[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:48[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:48[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:00:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:53[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:00:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:00:58[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:01:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:03[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:01:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:08[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:01:13[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:13[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:13[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:01:18[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:18[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:18[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:01:23[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:23[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:23[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:01:28[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:28[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:28[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:01:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:33[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:01:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:38[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:01:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:43[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:01:48[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:48[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:48[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:01:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:53[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:01:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:01:58[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:02:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:03[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:02:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:08[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:02:13[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:13[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:13[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:02:18[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:18[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:18[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:02:23[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:23[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:23[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:02:28[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:28[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:28[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:02:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:33[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:02:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:38[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:02:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:43[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:02:48[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:48[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:48[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:02:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:53[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:02:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:02:58[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:03:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:03[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:03:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:09[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:03:13[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:13[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:13[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:03:18[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:18[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:18[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:03:23[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:23[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:23[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:03:28[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:28[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:28[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:03:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:33[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:03:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:38[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:38[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:03:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:43[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:43[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:03:48[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:48[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:48[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:03:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:53[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:53[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:03:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:58[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:03:58[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:04:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:04:03[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:04:03[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:04:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:04:08[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:04:08[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:04:13[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:04:13[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:04:13[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:04:34[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:04:34[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:04:34[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:07:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:07:33[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:07:33[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:11:48[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mWarning: [antd: Card] `bodyStyle` is deprecated. Please use `styles.body` instead.
+[2m10:20:27[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mWarning: [antd: Card] `bodyStyle` is deprecated. Please use `styles.body` instead.
+[2m10:28:24[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mWarning: [antd: Card] `bodyStyle` is deprecated. Please use `styles.body` instead.
+[2m10:32:36[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:32:36[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:32:36[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:33:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:33:01[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:33:01[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:39:06[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m10:39:06[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22m获取数据失败 AxiosError: Request failed with status code 502
+    at settle (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:1838:14)
+    at XMLHttpRequest.onloadend (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:2231:4)
+    at Axios$1.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=9dbfa2ff:3024:37)
+    at async Promise.all (index 0)
+    at async http://localhost:5173/src/pages/ProjectDetail.tsx?t=1784166235334:163:33
+[2m10:39:06[22m [31m[1m[vite][22m[39m [31mhttp proxy error: /api/tasks/a384c40e-fede-4df3-8b87-5f86e0ab61d0/full-status[39m
+AggregateError [ECONNREFUSED]: 
+    at internalConnectMultiple (node:net:1194:18)
+    at afterConnectMultiple (node:net:1784:7)
+[2m11:22:03[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mWarning: [antd: Card] `bodyStyle` is deprecated. Please use `styles.body` instead.
+[2m15:21:20[22m [31m[1m[vite][22m[39m [31m[2m(client)[22m[39m [2m[console.error] [22mWarning: [antd: Card] `bodyStyle` is deprecated. Please use `styles.body` instead.

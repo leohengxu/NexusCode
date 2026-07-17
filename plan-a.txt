@@ -1,0 +1,186 @@
+# FastCode 项目 Vibe Coding Prompt（基于 zeroshot 模式 + OpenCode SDK）
+
+## 项目背景
+
+我要开发一个名为 **FastCode** 的代码全流程生成平台。当前阶段需要实现从 PRD 到三份架构文档，再到前后端代码并行开发，最后通过人工审核形成闭环的完整流程。
+
+## 核心设计理念
+
+借鉴 **zeroshot** 的"规划-实现-验证-迭代"闭环思想，但底层使用 **OpenCode SDK** 作为所有 Agent 的执行引擎。zeroshot 的模式是"壳"，OpenCode 是"核"。
+
+## 核心业务流程
+
+```
+PRD 上传 
+  → Planner Agent（架构师）生成三份文档（架构文档/API契约/DDL）
+  → 人工审批通过 
+  → Worker Agents 并行开发（前端开发Agent + 后端开发Agent）
+  → Validator Agents 盲审（功能/安全/性能/UI 多维度并行验证）
+  → 任一驳回则触发返修闭环（带着反馈重新生成，迭代计数+1）
+  → 全部通过 → 人工最终审核（功能/界面验收）
+  → 不通过则返修，通过则发布基线
+```
+
+### 关键闭环机制
+
+**"任一环节驳回 → 带着可操作反馈返回 → 对应 Agent 重新生成 → 重新验证"** 的循环：
+- 代码审核 Agent 驳回 → 反馈给 Worker Agent 修改 → 重新验证
+- 人工审核驳回 → 反馈给 Worker Agent 修改 → 重新验证
+- 返修导致文档变更 → 状态快照同步更新 → 开发者自动获取最新文档
+
+## 技术栈
+
+### 后端
+- Node.js 20+ / TypeScript
+- NestJS
+- `@opencode-ai/sdk`（官方 SDK）
+- Prisma + PostgreSQL
+- 文件系统操作
+
+### 前端
+- React 18+ / TypeScript
+- 组件库自选（Ant Design / MUI / shadcn）
+- Markdown 渲染 + Mermaid 图表
+- Swagger UI 渲染 OpenAPI
+
+### AI 编排框架
+- LangChain 1.3 + LangGraph（状态机编排）
+- 或者自行实现轻量级状态机（根据复杂度判断）
+
+### 执行引擎
+- OpenCode SDK（所有 Agent 的 AI 调用统一使用 OpenCode）
+
+## 需要你设计的内容
+
+### 1. 多智能体系统架构设计
+
+基于 zeroshot 的设计模式，但使用 OpenCode SDK 作为执行引擎，设计完整的 Agent 编排架构：
+
+**Agent 角色定义**：
+- **Planner Agent（架构师/规划者）**：接收 PRD，输出三份架构文档（技术架构/API契约/DDL）。对应 zeroshot 的 Planner。
+- **Worker Agents（开发者）**：前端开发 Agent + 后端开发 Agent，基于已批准的文档并行生成代码。对应 zeroshot 的 Implementer。
+- **Validator Agents（代码审核者）**：多个独立的验证者并行盲审（功能一致性、安全漏洞、性能问题、UI规范等）。对应 zeroshot 的 Validator。
+- **Human Reviewer（人工审核者）**：最终的功能和界面验收，作为最终门禁。
+
+**关键机制设计**：
+- **并行执行**：前端 Worker 和后端 Worker 如何在独立的 OpenCode Session 中并行调用？
+- **盲验证（Blind Validation）**：验证者看不到 Worker 的开发过程，只基于最终代码和原始需求做客观判断。如何设计 Prompt 实现？
+- **返修闭环**：任一环节驳回，如何带着可操作的反馈触发对应的 Agent 重新生成？迭代次数如何限制？
+- **状态快照（STATE_SNAPSHOT）**：如何汇总所有关键产出（文档/代码/验证结果）并持久化，确保返修时所有 Agent 看到的是最新的统一状态？
+
+### 2. OpenCode SDK 集成与 Agent 调用设计
+
+设计统一的 OpenCode SDK 客户端管理，以及每个 Agent 的具体调用方式：
+
+- **客户端管理**：如何初始化并管理 OpenCode 客户端连接（一体化模式 vs 客户端模式）？
+- **Session 管理**：每个 Agent 使用独立的 OpenCode Session，如何创建、管理、复用？
+- **结构化输出**：如何使用 `format` 参数强制返回 JSON，每个 Agent 的 JSON Schema 如何定义？
+- **Prompt 工程**：每个 Agent（Planner/Worker/Validator/Rework）的 Prompt 核心结构是什么？如何确保一致性和可追溯性？
+- **超时与错误处理**：如何设置超时、重试、降级策略？
+
+### 3. 工作流编排与状态管理
+
+设计完整的工作流状态机和持久化方案：
+
+- **LangGraph 状态机设计**：如何用 LangGraph 实现"规划 → 审批 → 并行开发 → 并行验证 → 返修 → 人工审核 → 发布"的完整状态流转？绘制状态图。
+- **状态定义与流转**：定义所有状态（PLANNING / PENDING_APPROVAL / DEVELOPING / VALIDATING / REWORKING / HUMAN_REVIEW / APPROVED / REJECTED），以及状态转换条件和触发器。
+- **状态快照（STATE_SNAPSHOT）设计**：借鉴 zeroshot 的持久化状态设计，定义包含文档、代码、验证结果、反馈历史、文件路径的完整状态结构。
+- **迭代保护机制**：如何设置最大迭代次数（如3次）防止无限循环？超过上限后的处理策略？
+
+### 4. 文件存储与版本管理
+
+设计文档和代码的文件系统存储策略：
+
+- **目录结构**：如何组织项目目录？当前版本和历史版本如何归档？
+- **版本管理**：每次返修重新生成前如何原子归档旧版本？版本号如何管理？
+- **一致性保障**：文档修改时如何确保代码同步更新？状态快照如何联动更新？
+- **静态文件服务**：如何配置让前端直接下载文档和代码文件？
+
+### 5. 数据库 Schema 设计
+
+基于上述状态管理需求，设计数据库表结构（Prisma Schema）：
+
+- 任务表（tasks）：项目ID、状态、版本号、存储路径、PRD内容
+- 状态快照表（state_snapshots）：版本历史、状态JSON
+- 审批日志表（approval_logs）：操作人、操作类型、反馈内容
+- 迭代记录表（iteration_logs）：迭代轮次、触发者、反馈内容
+
+### 6. API 接口设计
+
+设计完整的 RESTful API：
+
+- 发起文档生成（POST /documents/generate）
+- 审批通过（POST /tasks/:projectId/approve）
+- 审批驳回（POST /tasks/:projectId/reject）
+- 查询任务状态（GET /tasks/:projectId）
+- 获取文档预览（GET /tasks/:projectId/documents）
+- 获取代码预览（GET /tasks/:projectId/code）
+- 触发返修（POST /tasks/:projectId/rework）
+- 人工最终审核（POST /tasks/:projectId/final-approve）
+
+### 7. 前端交互设计
+
+设计完整的用户界面：
+
+- **PRD 上传页**：文本输入 + 文件上传 + 生成按钮 + 生成进度展示
+- **审批页**：三份文档预览（Tab切换） + 技术栈选型醒目显示待审批状态 + 通过/驳回按钮
+- **开发进度页**：前后端代码生成进度 + 代码预览（语法高亮） + 下载按钮
+- **审核页**：代码展示 + 多维度验证结果展示 + 通过/驳回按钮
+- **返修状态页**：迭代次数显示 + 历史反馈记录 + 重新生成进度
+
+### 8. 与 zeroshot 的对比与适配
+
+说明你的设计如何借鉴 zeroshot 的模式，以及具体适配到 FastCode 的改动：
+
+- **相似之处**：闭环机制、盲验证、状态快照、多角色分工
+- **不同之处**：执行引擎（OpenCode SDK vs 外部CLI）、隔离环境（文件版本 vs Git Worktree）、验证方式（AI分析 vs 实际执行）
+- **适配策略**：如何将 zeroshot 的 `Conductor` 概念映射到 FastCode 的编排层？
+
+### 9. 错误处理与异常场景
+
+设计以下场景的处理方案：
+- OpenCode SDK 连接失败 / 超时
+- Agent 生成结果无法解析
+- 文件读写失败
+- 并发冲突（同一项目同时被操作）
+- 迭代超限（人工介入流程）
+- 磁盘空间不足
+
+### 10. 部署与运行环境
+
+提供：
+- 环境变量清单（OpenCode服务地址、数据库连接、存储路径等）
+- OpenCode 服务的独立部署方案（如何用 `opencode serve` 启动独立服务）
+- 开发环境启动命令
+- 存储目录权限要求
+
+## 约束条件
+
+1. **闭环强制执行**：任一环节驳回必须触发对应 Agent 重新生成，不能跳过
+2. **盲验证机制**：验证者不能接触 Worker 的开发过程，必须基于最终产出做客观判断
+3. **强一致性保障**：文档与代码必须逻辑对齐，任何修改都必须全量重新生成受影响的资产
+4. **状态快照持久化**：所有状态必须持久化，支持崩溃恢复
+5. **版本可追溯**：每次重新生成前自动归档旧版本
+6. **迭代上限保护**：最大迭代次数不超过3次，超过则强制人工介入
+
+## 参考信息
+
+### 产出物对照表
+
+| 产出物 | 主要内容 | 负责 Agent | 核心价值 |
+|--------|---------|-----------|----------|
+| 技术架构文档 | 技术栈选型 + 模块划分（Mermaid图） | Planner Agent | 划定边界，避免自由发挥 |
+| API 契约 | OpenAPI 3.0 YAML | Planner Agent | 并行开发的共同语言 |
+| 数据模型 | PostgreSQL DDL | Planner Agent | 定义数据存储结构 |
+| 前端代码 | React/Vue 组件代码 | 前端 Worker Agent | 实现用户界面 |
+| 后端代码 | API 实现代码 | 后端 Worker Agent | 实现业务逻辑 |
+
+### 验证维度对照表
+
+| 验证者 | 关注点 | 验证方式 |
+|--------|--------|----------|
+| 功能验证者 | API契约一致性、数据模型匹配 | AI分析代码 vs 文档 |
+| 安全验证者 | SQL注入、XSS、认证授权 | AI安全扫描 |
+| 性能验证者 | N+1查询、缓存策略 | AI代码审查 |
+| UI验证者 | 设计规范、响应式 | AI视觉分析 |
+

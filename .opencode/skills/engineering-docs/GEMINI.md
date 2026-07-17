@@ -1,0 +1,13 @@
+@./skills/technical-specification/SKILL.md
+@./skills/technical-feasibility-study/SKILL.md
+@./skills/system-architecture-document/SKILL.md
+@./skills/technical-blueprint/SKILL.md
+@./skills/api-design-document/SKILL.md
+@./skills/database-design-document/SKILL.md
+@./skills/architecture-decision-record/SKILL.md
+@./skills/security-threat-model/SKILL.md
+@./skills/deployment-plan/SKILL.md
+@./skills/technical-runbook/SKILL.md
+@./skills/incident-postmortem/SKILL.md
+@./skills/design-system-specification/SKILL.md
+@./skills/test-strategy-document/SKILL.md
