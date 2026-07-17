@@ -36,79 +36,85 @@ export class TaskService implements OnModuleInit, OnModuleDestroy {
 
   /**
    * 看门狗：检测并恢复卡在中间状态的项目
-   * - GENERATING / DEVELOPING / VALIDATING 超过 30 分钟 → 标记为 FAILED
+   *
+   * 判定依据使用实体级 startTime（task.startTime / codeGen.startTime），
+   * 而非 project.updatedAt —— 因为 LLM 调用期间 project 记录不会被更新，
+   * updatedAt 不刷新会导致进行中的长任务被误杀。
+   *
+   * - GENERATING：最新 RUNNING task 的 startTime 超过阈值 → FAILED
+   * - DEVELOPING：所有 RUNNING codeGen 的 startTime 超过阈值（或无 RUNNING 记录却停在 DEVELOPING）→ FAILED
+   *
+   * 标记失败时走 WorkflowService.onFailed（状态机校验 + 快照 + 事件），
+   * 不再裸 prisma.project.update，避免绕过状态机导致后台任务完成后状态转换冲突。
    */
   private async checkStuckProjects() {
     try {
-      const stuckStatuses = [
-        ProjectStatus.GENERATING,
-        ProjectStatus.DEVELOPING,
-      ];
       const threshold = new Date(Date.now() - TaskService.STUCK_THRESHOLD_MS);
 
-      const stuckProjects = await this.prisma.project.findMany({
-        where: {
-          status: { in: stuckStatuses },
-          updatedAt: { lt: threshold },
-        },
-        select: { id: true, name: true, status: true, updatedAt: true },
+      // ── GENERATING：基于 task.startTime 判断 ──
+      const generatingProjects = await this.prisma.project.findMany({
+        where: { status: ProjectStatus.GENERATING },
+        select: { id: true, name: true },
       });
 
-      for (const project of stuckProjects) {
-        this.logger.warn(`[Watchdog] 项目 ${project.id} (${project.name}) 在 ${project.status} 状态卡住超过 30 分钟，标记为 FAILED`);
+      for (const project of generatingProjects) {
+        const runningTask = await this.prisma.task.findFirst({
+          where: { projectId: project.id, status: TaskStatus.RUNNING },
+          orderBy: { startTime: 'desc' },
+          select: { id: true, startTime: true },
+        });
 
-        // 标记 project 为 FAILED
-        try {
-          await this.prisma.project.update({
-            where: { id: project.id },
-            data: { status: ProjectStatus.FAILED },
-          });
-        } catch (e: any) {
-          this.logger.error(`[Watchdog] 更新项目状态失败: ${e?.message}`);
+        // 没有 RUNNING task（状态脱节），或 task 已运行超阈值 → 判定卡住
+        const stuck = !runningTask || (runningTask.startTime && runningTask.startTime < threshold);
+        if (!stuck) continue;
+
+        this.logger.warn(`[Watchdog] 项目 ${project.id} (${project.name}) 文档生成超时，标记为 FAILED`);
+
+        if (runningTask) {
+          await this.prisma.task.update({
+            where: { id: runningTask.id },
+            data: { status: TaskStatus.FAILED, endTime: new Date(), errorMsg: '看门狗检测：文档生成超时' },
+          }).catch((e: any) => this.logger.error(`[Watchdog] 更新任务状态失败: ${e?.message}`));
         }
 
-        // 标记最新的 RUNNING task 为 FAILED
-        try {
-          const latestTask = await this.prisma.task.findFirst({
-            where: { projectId: project.id, status: TaskStatus.RUNNING },
-            orderBy: { createdAt: 'desc' },
-          });
-          if (latestTask) {
-            await this.prisma.task.update({
-              where: { id: latestTask.id },
-              data: { status: TaskStatus.FAILED, endTime: new Date(), errorMsg: '看门狗检测：项目超时未完成' },
-            });
-          }
-        } catch (e: any) {
-          this.logger.error(`[Watchdog] 更新任务状态失败: ${e?.message}`);
-        }
+        await this.workflow.onFailed(project.id, '文档生成超时（看门狗检测）')
+          .catch((e: any) => this.logger.error(`[Watchdog] 标记项目失败失败: ${e?.message}`));
+      }
 
-        // 标记 RUNNING 的 codeGen 为 FAILED
-        try {
+      // ── DEVELOPING：基于 codeGen.startTime 判断 ──
+      const developingProjects = await this.prisma.project.findMany({
+        where: { status: ProjectStatus.DEVELOPING },
+        select: { id: true, name: true },
+      });
+
+      for (const project of developingProjects) {
+        const runningCodeGens = await this.prisma.codeGen.findMany({
+          where: { projectId: project.id, status: 'RUNNING' },
+          select: { id: true, startTime: true },
+        });
+
+        // 没有 RUNNING codeGen 却停在 DEVELOPING，或所有 RUNNING codeGen 都超阈值 → 卡住
+        const stuck = runningCodeGens.length === 0 ||
+          runningCodeGens.every(c => c.startTime && c.startTime < threshold);
+        if (!stuck) continue;
+
+        this.logger.warn(`[Watchdog] 项目 ${project.id} (${project.name}) 代码生成超时，标记为 FAILED`);
+
+        if (runningCodeGens.length > 0) {
           await this.prisma.codeGen.updateMany({
-            where: { projectId: project.id, status: 'RUNNING' },
-            data: { status: 'FAILED', endTime: new Date(), errorMsg: '看门狗检测：超时' },
-          });
-        } catch (e: any) {
-          this.logger.error(`[Watchdog] 更新代码生成状态失败: ${e?.message}`);
+            where: { id: { in: runningCodeGens.map(c => c.id) } },
+            data: { status: 'FAILED', endTime: new Date(), errorMsg: '看门狗检测：代码生成超时' },
+          }).catch((e: any) => this.logger.error(`[Watchdog] 更新代码生成状态失败: ${e?.message}`));
         }
 
-        // 标记 RUNNING 的 validation 为 FAILED
-        try {
-          await this.prisma.validation.updateMany({
-            where: { projectId: project.id, status: 'RUNNING' },
-            data: { status: 'FAILED', comments: '看门狗检测：验证超时' },
-          });
-        } catch (e: any) {
-          this.logger.error(`[Watchdog] 更新验证状态失败: ${e?.message}`);
-        }
+        // 标记 RUNNING validation 为 FAILED
+        await this.prisma.validation.updateMany({
+          where: { projectId: project.id, status: 'RUNNING' },
+          data: { status: 'FAILED', comments: '看门狗检测：验证超时' },
+        }).catch((e: any) => this.logger.error(`[Watchdog] 更新验证状态失败: ${e?.message}`));
 
-        // 通知前端
-        try {
-          await this.workflow.onError(project.id, `项目在 ${project.status} 状态超时，已自动标记为失败`);
-        } catch (e: any) {
-          this.logger.error(`[Watchdog] 发送错误通知失败: ${e?.message}`);
-        }
+        await this.workflow.onFailed(project.id, '代码生成超时（看门狗检测）')
+          .catch((e: any) => this.logger.error(`[Watchdog] 标记项目失败失败: ${e?.message}`));
       }
     } catch (e: any) {
       this.logger.error(`[Watchdog] 看门狗执行失败: ${e?.message}`);
@@ -225,6 +231,12 @@ export class TaskService implements OnModuleInit, OnModuleDestroy {
         rejectionComment,
         onProgress: async (step) => {
           await this.appendThinking(taskId, step);
+          // 心跳：刷新 project.updatedAt，让看门狗感知到文档生成仍在进行
+          // （LLM 调用期间 project 不会被其他逻辑更新，updatedAt 不刷新会触发误杀）
+          await this.prisma.project.update({
+            where: { id: projectId },
+            data: { updatedAt: new Date() },
+          }).catch(() => {});
           await this.workflow.onThinkingStep(projectId, step).catch(() => {});
         },
       });

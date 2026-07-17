@@ -53,6 +53,8 @@ export class OpencodeSdkService implements OnModuleInit, OnModuleDestroy {
   private savedProviderConfig: Record<string, unknown> | null = null;
   // 正在进行的 prompt 数量。>0 时禁止暂停 server（否则会中断进行中的请求）。
   private activeRequests = 0;
+  // 唤醒互斥锁：并发请求复用同一个唤醒 Promise，避免重复启动 server 子进程泄漏
+  private wakePromise: Promise<void> | null = null;
 
   // ═══════════════════ 生命周期 ═══════════════════
 
@@ -229,9 +231,16 @@ export class OpencodeSdkService implements OnModuleInit, OnModuleDestroy {
     userMessage: string,
     options?: PromptOptions,
   ): Promise<string> {
-    // 唤醒（若已暂停）
+    // 唤醒（若已暂停）：用互斥锁确保并发请求只唤醒一次，
+    // 避免 ensureServer 被并发调用导致重复启动 server 子进程泄漏，
+    // 以及部分请求因 sdkClient 尚未就绪而错误降级到 LangChain。
     if (this.paused && this.savedProviderConfig) {
-      await this.ensureServer();
+      if (!this.wakePromise) {
+        this.wakePromise = this.ensureServer().finally(() => {
+          this.wakePromise = null;
+        });
+      }
+      await this.wakePromise;
     }
 
     // 走 SDK：用 activeRequests 保护，防止请求进行中被 idle timer 暂停
@@ -240,6 +249,12 @@ export class OpencodeSdkService implements OnModuleInit, OnModuleDestroy {
       if (this.idleTimer) clearTimeout(this.idleTimer); // 请求期间不计闲置
       try {
         return await this.promptViaSdk(systemPrompt, userMessage, options);
+      } catch (sdkErr: any) {
+        // SDK 运行期失败（非初始化失败）：自动回退到 LangChain，避免单次调用失败直接中断业务
+        this.logger.warn(
+          `[OpencodeSDK] SDK prompt 失败，回退到 LangChain: ${sdkErr?.message}`,
+        );
+        return await this.promptViaLangChain(systemPrompt, userMessage, options);
       } finally {
         this.activeRequests--;
         this.resetIdleTimer(); // 请求结束后重新开始闲置计时

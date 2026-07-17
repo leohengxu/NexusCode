@@ -121,6 +121,7 @@ model Validation {
 
   project     Project  @relation(fields: [projectId], references: [id])
 
+  @@unique([projectId, role, iteration])
   @@map("validations")
 }
 

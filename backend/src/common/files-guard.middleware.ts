@@ -40,8 +40,14 @@ export class FilesGuardMiddleware implements NestMiddleware {
     }
 
     // req.path 形如 /{projectId}/v1/xxx.md（已剥离 /files 前缀由 ServeStatic 处理，
-    // 但中间件挂在 /files 上时 req.path 仍含相对路径），统一用 originalUrl 兜底判断
-    const target = decodeURIComponent(req.originalUrl || req.path || '');
+    // 但中间件挂在 /files 上时 req.path 仍含相对路径），统一用 originalUrl 兜底判断。
+    // decodeURIComponent 对非法 % 序列会抛 URIError，需捕获避免 500。
+    let target = req.originalUrl || req.path || '';
+    try {
+      target = decodeURIComponent(target);
+    } catch {
+      // 非法编码序列，保留原始字符串进行模式匹配
+    }
 
     for (const pattern of FilesGuardMiddleware.BLOCKED_PATTERNS) {
       if (pattern.test(target)) {

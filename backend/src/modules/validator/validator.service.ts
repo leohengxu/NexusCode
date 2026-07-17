@@ -262,11 +262,6 @@ export class ValidatorService {
 
       const validatorRoles = [ValidatorRole.FUNCTIONAL, ValidatorRole.SECURITY, ValidatorRole.PERFORMANCE, ValidatorRole.UI];
 
-      // 判定每个维度是否应跳过（因所需代码缺失）
-      const skipReason = (role: string): string | null => {
-        return null;
-      };
-
       const validationRecords = await Promise.all(
         validatorRoles.map(role =>
           this.prisma.validation.create({
@@ -277,7 +272,7 @@ export class ValidatorService {
               codeGenId: frontendCode?.id || backendCode?.id,
               iteration,
             },
-          }).then(record => ({ record, skip: skipReason(role) })),
+          }),
         ),
       );
 
@@ -298,28 +293,16 @@ export class ValidatorService {
   ) {
     try {
       const results = await Promise.all(
-        records.map(({ record, skip }) => {
-          // 跳过的维度（所需代码缺失）：不进 LLM，直接标 PASSED + 备注，
-          // 避免对着空代码必然 FAILED 触发无意义返修。
-          if (skip) {
-            return Promise.resolve({
-              role: record.role,
-              passed: true,
-              skipped: true,
-              result: { skipped: true, reason: skip },
-              score: 100,
-              summary: `⏭️ ${skip}`,
-            });
-          }
-          return this.runSingleValidation(record.id, record.role, context)
+        records.map((record) =>
+          this.runSingleValidation(record.id, record.role, context)
             .catch(err => ({
               role: record.role,
               passed: false,
               result: { error: err.message },
               score: 0,
               summary: err.message,
-            }));
-        }),
+            })),
+        ),
       );
 
       const allPassed = results.every(r => r.passed);
@@ -327,7 +310,7 @@ export class ValidatorService {
       for (let i = 0; i < records.length; i++) {
         const result = results[i];
         await this.prisma.validation.update({
-          where: { id: records[i].record.id },
+          where: { id: records[i].id },
           data: {
             status: result.passed ? 'PASSED' : 'FAILED',
             result: JSON.stringify(result.result || {}),

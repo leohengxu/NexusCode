@@ -133,10 +133,19 @@ export class FileService {
   }
 
   /**
-   * 获取文档相对路径（用于前端下载链接）
+   * 获取文档相对路径（用于前端下载链接，如 /projectId/v1/xxx.md）
+   *
+   * 注意：this.uploadDir 可能是相对路径（如 ./uploads），而保存时 path.join 会规范化掉
+   * 前导 ./，导致字符串 replace 匹配不到、剥离失败（downloadUrl 变成 /filesuploads/...）。
+   * 因此统一用 path.resolve 转绝对路径后再用 path.relative 计算，兼容相对/绝对配置
+   * 及历史存储的相对路径。
    */
   getRelativePath(filePath: string): string {
-    return filePath.replace(this.uploadDir, '').replace(/\\/g, '/');
+    const root = path.resolve(this.uploadDir);
+    const abs = path.isAbsolute(filePath) ? filePath : path.resolve(filePath);
+    let rel = path.relative(root, abs).replace(/\\/g, '/');
+    if (!rel.startsWith('/')) rel = '/' + rel;
+    return rel;
   }
 
   /**

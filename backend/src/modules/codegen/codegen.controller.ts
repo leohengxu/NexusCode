@@ -1,4 +1,4 @@
-import { Controller, Post, Get, Param, Query } from '@nestjs/common';
+import { Controller, Post, Get, Param, Query, HttpException, BadRequestException } from '@nestjs/common';
 import { ApiTags, ApiOperation, ApiQuery } from '@nestjs/swagger';
 import { CodegenService } from './codegen.service';
 import { CodeGenRole } from '../../common/constants';
@@ -11,13 +11,15 @@ export class CodegenController {
   @Post(':projectId/start')
   @ApiOperation({ summary: '启动并行代码生成（前端 + 后端 Worker Agents）' })
   async start(@Param('projectId') projectId: string) {
-    // 并发保护：service 内部也有守卫，这里先行返回明确提示
     try {
       await this.codegenService.startCodeGeneration(projectId);
+      return { message: '代码生成已启动', projectId, started: true };
     } catch (err: any) {
-      return { message: err.message, projectId, started: false };
+      // 错误应返回适当的 HTTP 状态码，而非 200 + started:false
+      throw err instanceof HttpException
+        ? err
+        : new BadRequestException(err.message || '代码生成启动失败');
     }
-    return { message: '代码生成已启动', projectId, started: true };
   }
 
   @Get(':projectId/status')

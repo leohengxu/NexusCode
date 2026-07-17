@@ -12,7 +12,6 @@
  */
 
 import { Logger } from '@nestjs/common';
-import fetch from 'node-fetch';
 
 // ── ESM bridge ──
 const dynamicEsmImport: (specifier: string) => Promise<any> =
@@ -88,9 +87,9 @@ export async function prompt(
     `system=${opts.system.length}chars user=${opts.user.length}chars`,
   );
 
-  // 1. 创建 Session
+  // 1. 创建 Session（传 signal 支持超时取消底层请求）
   const sessionRes = await withTimeout<any>(
-    client.session.create({ body: { title: `Chat_${Date.now()}` } }),
+    (signal) => client.session.create({ body: { title: `Chat_${Date.now()}` }, signal }),
     30000,
     'session.create',
   );
@@ -99,16 +98,20 @@ export async function prompt(
 
   try {
     // 2. 发送 prompt — agent="general" + tools disabled = 纯 chat
+    //    temperature/maxTokens 传入 body 控制生成参数（此前仅用于超时计算，对 SDK 调用无效）
     const promptTimeoutMs = (opts.maxTokens && opts.maxTokens > 8000) ? 300000 : 180000;
     const promptRes = await withTimeout<any>(
-      client.session.prompt({
+      (signal) => client.session.prompt({
         path: { id: sessionId },
+        signal,
         body: {
           system: opts.system,
           agent: 'general',
           parts: [{ type: 'text', text: opts.user }],
           model: { providerID: opts.providerID, modelID: opts.modelID },
           tools: ALL_TOOLS_DISABLED,
+          temperature: opts.temperature,
+          maxTokens: opts.maxTokens,
         },
       }),
       promptTimeoutMs,
@@ -145,21 +148,25 @@ async function loadSdk(): Promise<any> {
 }
 
 async function withTimeout<T>(
-  promise: Promise<T>,
+  fn: (signal: AbortSignal) => Promise<T>,
   timeoutMs: number,
   label: string,
 ): Promise<T> {
-  let timer: NodeJS.Timeout | undefined;
-  const timeoutPromise = new Promise<never>((_, reject) => {
-    timer = setTimeout(
-      () => reject(new Error(`${label} timeout after ${timeoutMs}ms`)),
-      timeoutMs,
-    );
-  });
+  const controller = new AbortController();
+  const timer = setTimeout(
+    () => controller.abort(new Error(`${label} timeout after ${timeoutMs}ms`)),
+    timeoutMs,
+  );
   try {
-    return await Promise.race([promise, timeoutPromise]);
+    return await fn(controller.signal);
+  } catch (err: any) {
+    // 超时触发 abort，统一转为可读的超时错误；非超时错误原样抛出
+    if (controller.signal.aborted) {
+      throw new Error(`${label} timeout after ${timeoutMs}ms`);
+    }
+    throw err;
   } finally {
-    if (timer) clearTimeout(timer);
+    clearTimeout(timer);
   }
 }
 

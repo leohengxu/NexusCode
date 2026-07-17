@@ -1,6 +1,6 @@
 # FastCode - 代码全流程生成平台
 
-从 PRD 文档自动生成三份架构设计文档 → 人工审批 → Worker Agents 并行代码生成 → Validator Agents 多维盲审 → 返修闭环 → 最终审核发布。
+从 PRD 文档自动生成四份架构设计文档 → 人工审批 → Worker Agents 并行代码生成 → Validator Agents 多维盲审 → 返修闭环 → 最终审核发布。
 
 ## 项目结构
 
@@ -39,11 +39,9 @@ PRD 上传
   → 人工审批技术栈
     → 通过 → Worker Agents 并行开发（前端Agent + 后端Agent）
     → 驳回 → 全量重新生成文档
-  → Validator Agents 盲审（功能/安全/性能/UI 并行验证）
+  → 代码预览测试（本地 Vite 沙箱预览 + Validator Agents 盲审）
     → 全部通过 → 人工最终审核
-    → 任一驳回 → 返修闭环（反馈给 Worker Agent 重新生成，迭代计数+1）
-      → 重新验证（最多3次迭代）
-      → 超限 → 强制人工审核
+    → 任一驳回 → 返修闭环（反馈给 Worker Agent 重新生成，迭代计数+1，不设次数上限）
   → 最终审核通过 → 基线发布
   → 最终审核驳回 → 返修或失败
 ```
@@ -51,14 +49,12 @@ PRD 上传
 ## 状态流转
 
 ```
-PENDING → GENERATING → PENDING_REVIEW → DEVELOPING → VALIDATING
-                                                  ↓          ↓
-                                              REWORKING → VALIDATING (返修闭环，最多3次)
-                                                  ↓
-                                              HUMAN_REVIEW → APPROVED (终态)
-                                                      ↓
-                                                    REJECTED (终态)
-所有状态均可进入 FAILED (异常终止)
+PENDING → GENERATING → PENDING_REVIEW → DEVELOPING → PREVIEW → HUMAN_REVIEW → APPROVED (终态)
+                                  ↓                    ↓             ↓
+                              REJECTED              REWORKING ←──────┘ (返修闭环，不设上限)
+                                  ↓                    ↓
+                            GENERATING            DEVELOPING
+所有状态均可进入 FAILED (异常终止，可恢复到 PENDING/REWORKING)
 ```
 
 ## 快速启动
@@ -169,5 +165,5 @@ npm run dev
 - **LLM**: OpenCode Zen (OpenAI 兼容模式)
 - **存储**: 文件系统为主，数据库存元数据
 - **版本管理**: 目录级存档 `uploads/{id}/archive/v{n}/`
-- **迭代保护**: 最多3次返修迭代
+- **迭代保护**: 返修不设次数上限，iterationCount 持续递增
 - **盲验证**: Validator 只看最终代码，不看开发过程

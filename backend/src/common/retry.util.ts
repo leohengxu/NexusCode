@@ -45,9 +45,6 @@ export async function withRetry<T>(
 
       // 检查是否为可重试错误
       const isRetryable = retryableErrors.some(pattern => msg.toLowerCase().includes(pattern.toLowerCase()));
-      if (!isRetryable && attempt === maxRetries) {
-        throw err;
-      }
       if (!isRetryable) {
         throw err;
       }

@@ -29,6 +29,6 @@ export class DocumentController {
     @Query('taskId') taskId: string,
     @Query('docType') docType: DocType,
   ) {
-    return this.documentService.getDocumentPreview(taskId, docType);
+    return this.documentService.getDocumentPreview(projectId, taskId, docType);
   }
 }

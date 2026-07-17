@@ -2,6 +2,7 @@ import { BadRequestException } from '@nestjs/common';
 import { diskStorage } from 'multer';
 import { extname, join } from 'path';
 import { randomUUID } from 'crypto';
+import * as fs from 'fs';
 
 // 允许的 PRD 文件类型
 const ALLOWED_MIME_TYPES = [
@@ -16,7 +17,14 @@ const ALLOWED_EXTENSIONS = ['.txt', '.md', '.markdown'];
 
 export const multerConfig = {
   storage: diskStorage({
-    destination: join(process.cwd(), 'uploads', 'prd'),
+    destination: (_req, _file, callback) => {
+      // multer 不会自动创建目标目录，需提前确保存在，否则首次上传报 ENOENT
+      const dir = join(process.cwd(), 'uploads', 'prd');
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+      }
+      callback(null, dir);
+    },
     filename: (_req, file, callback) => {
       const ext = extname(file.originalname);
       const filename = `prd_${Date.now()}_${randomUUID().slice(0, 8)}${ext}`;

@@ -148,6 +148,7 @@ const CodeFileTree: React.FC<Props> = ({ projectId, codeGens }) => {
   const [searchText, setSearchText] = useState('');
 
   const currentCodeGen = codeGens?.filter(c => c.role === tab).sort((a, b) => b.iteration - a.iteration)[0];
+  const currentIteration = currentCodeGen?.iteration;
   const isRunning = currentCodeGen?.status === 'RUNNING';
   const isFailed = currentCodeGen?.status === 'FAILED';
 
@@ -167,7 +168,9 @@ const CodeFileTree: React.FC<Props> = ({ projectId, codeGens }) => {
 
   useEffect(() => {
     loadTree(tab);
-  }, [tab, projectId]);
+    // currentIteration 变化（新迭代生成完成）时刷新文件树，避免预览是新版、代码树还是旧版
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tab, projectId, currentIteration]);
 
   const handleFileSelect = async (filePath: string) => {
     setSelectedFile(filePath);

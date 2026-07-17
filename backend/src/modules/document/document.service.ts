@@ -11,22 +11,18 @@ export class DocumentService {
   ) {}
 
   /**
-   * 获取项目最新文档列表
+   * 获取项目最新版本文档列表
    */
   async getDocumentsByProject(projectId: string) {
+    // 仅取 version 字段（轻量）。旧实现 include documents 会拉取所有版本文档到内存，
+    // 且注释承诺的"查询后过滤"从未执行，纯粹是浪费的查询。
     const project = await this.prisma.project.findUnique({
       where: { id: projectId },
-      include: {
-        documents: {
-          where: { version: { equals: undefined } }, // 将在查询后过滤
-          orderBy: { createdAt: 'desc' },
-        },
-      },
+      select: { id: true, version: true },
     });
 
     if (!project) throw new NotFoundException('项目不存在');
 
-    // 获取最新版本的文档
     const latestDocs = await this.prisma.document.findMany({
       where: { projectId, version: project.version },
       orderBy: { docType: 'asc' },
@@ -41,9 +37,9 @@ export class DocumentService {
   /**
    * 获取单份文档预览内容
    */
-  async getDocumentPreview(taskId: string, docType: DocType) {
+  async getDocumentPreview(projectId: string, taskId: string, docType: DocType) {
     const doc = await this.prisma.document.findFirst({
-      where: { taskId, docType },
+      where: { taskId, docType, projectId },
     });
 
     if (!doc) throw new NotFoundException(`文档不存在: ${docType}`);

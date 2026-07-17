@@ -103,19 +103,23 @@ const ProjectDetail: React.FC<Props> = ({ projectId, onBack }) => {
   const [selectedStage, setSelectedStage] = useState<number>(0);
   const isManualNavigation = useRef(false);
   const { on } = useWebSocket(projectId);
+  // 请求版本号：轮询与 WS 事件并发触发 fetchData 时，丢弃过期响应避免旧数据覆盖新状态
+  const fetchSeqRef = useRef(0);
 
   const fetchData = useCallback(async () => {
+    const seq = ++fetchSeqRef.current;
     try {
       const [statusRes, fullRes] = await Promise.all([
         taskApi.getStatus(projectId),
         taskApi.getFullStatus(projectId).catch(() => ({ data: null })),
       ]);
+      if (seq !== fetchSeqRef.current) return; // 过期响应丢弃
       setProject(statusRes.data);
       if (fullRes.data) setFullProject(fullRes.data);
     } catch (err) {
       console.error('获取数据失败', err);
     } finally {
-      setLoading(false);
+      if (seq === fetchSeqRef.current) setLoading(false);
     }
   }, [projectId]);
 

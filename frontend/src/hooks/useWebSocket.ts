@@ -1,7 +1,8 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { io, Socket } from 'socket.io-client';
 
-const WS_URL = 'http://localhost:3000';
+// 优先使用环境变量，否则基于当前页面 hostname 推导后端地址（避免硬编码 localhost 导致部署失效）
+const WS_URL = import.meta.env.VITE_WS_URL || `http://${window.location.hostname}:3000`;
 
 type EventHandler = (data: any) => void;
 
