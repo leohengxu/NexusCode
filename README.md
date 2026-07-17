@@ -1,4 +1,4 @@
-# FastCode - 代码全流程生成平台
+# NexusCode - 代码全流程生成平台
 
 从 PRD 文档自动生成四份架构设计文档 → 人工审批 → Worker Agents 并行代码生成 → Validator Agents 多维盲审 → 返修闭环 → 最终审核发布。
 
